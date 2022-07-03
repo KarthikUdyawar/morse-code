@@ -63,7 +63,7 @@ def encoder():
     try:
         for letter in text:
             code = f'{code} {morse_code[letter]}'
-    except:
+    except Exception:
         messagebox.showerror("Error", "Please enter valid text")
     code_display.insert(tk.INSERT, code)
     code_display.config(state='disabled')
@@ -78,7 +78,7 @@ def decoder():
     try:
         for group in groups:
             text = text + textConveter[group]
-    except :
+    except Exception:
         messagebox.showerror("Error", "Please enter valid code")
     text_display.insert(tk.INSERT, text)
     text_display.config(state='disabled')
@@ -111,7 +111,7 @@ def speak():
             pygame.mixer.music.play()
             while pygame.mixer.music.get_busy():
                 continue
-    except:
+    except Exception:
         messagebox.showwarning("Sorry", "I only speak english :(")
 
 #Main function
