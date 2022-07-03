@@ -46,7 +46,7 @@ morse_code = {'':'  ',
               'Z':'--..'}
 
 # inverse dictionary
-textConveter = {value:key for (key, value) in morse_code.items()}
+textConverter = {value:key for (key, value) in morse_code.items()}
 
 # Variables
 root = tk.Tk()
@@ -77,7 +77,7 @@ def decoder():
     text = ''
     try:
         for group in groups:
-            text = text + textConveter[group]
+            text = text + textConverter[group]
     except Exception:
         messagebox.showerror("Error", "Please enter valid code")
     text_display.insert(tk.INSERT, text)
