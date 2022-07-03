@@ -6,6 +6,17 @@ from gtts import gTTS
 import tkinter as Tk
 from tkinter import PhotoImage, StringVar, messagebox
 
+try:
+    import winsound
+except ImportError:
+    import os
+    def playSound(frequency,duration):
+        #apt-get install beep
+        os.system(f'beep -f {frequency} -l {duration}')
+else:
+    def playSound(frequency,duration):
+        winsound.Beep(frequency,duration)
+
 # Morse code dictionary
 morse_code: "dict[str, str]" = {
     "": "  ",
@@ -101,9 +112,11 @@ def sound():
 
     for beep in beeps:
         if beep == ".":
-            winsound.Beep(1000, 200)
+            # winsound.Beep(1000, 200)
+            playSound(1000,200)
         elif beep == "-":
-            winsound.Beep(1000, 600)
+            # winsound.Beep(1000, 600)
+            playSound(1000,600)
         elif beep in ["/", "//"]:
             time.sleep(0.8)
         else:
