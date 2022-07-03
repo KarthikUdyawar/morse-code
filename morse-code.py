@@ -94,7 +94,7 @@ def sound():
             winsound.Beep(1000, 200)
         elif beep == '-':
             winsound.Beep(1000, 600)
-        elif beep == '/' or beep == '//':
+        elif beep in ['/', '//']:
             time.sleep(0.8)
         else:
             time.sleep(0.6)
