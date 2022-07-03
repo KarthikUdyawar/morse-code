@@ -52,6 +52,8 @@ textConverter: "dict[str, str]" = {value: key for (key, value) in morse_code.ite
 
 # Variables
 root: Tk = Tk.Tk()
+root.geometry("820x300")
+root.resizable(0,0)
 root.title("Morse Code")
 text_var: StringVar = Tk.StringVar()
 code_var: StringVar = Tk.StringVar()
