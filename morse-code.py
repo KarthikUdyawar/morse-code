@@ -62,7 +62,7 @@ def encoder():
     code = ''
     try:
         for letter in text:
-            code = code + ' ' + morse_code[letter]
+            code = f'{code} {morse_code[letter]}'
     except:
         messagebox.showerror("Error", "Please enter valid text")
     code_display.insert(tk.INSERT, code)
