@@ -4,7 +4,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import winsound, time, io, pygame
 from gtts import gTTS
 import tkinter as Tk
-from tkinter import StringVar, messagebox
+from tkinter import PhotoImage, StringVar, messagebox
 
 # Morse code dictionary
 morse_code: "dict[str, str]" = {
@@ -57,6 +57,8 @@ root: Tk = Tk.Tk()
 root.geometry("820x300")
 root.resizable(0,0)
 root.title("Morse Code")
+icon = PhotoImage(file = './icon/morse-code.png')
+root.iconphoto(False, icon)
 text_var: StringVar = Tk.StringVar()
 code_var: StringVar = Tk.StringVar()
 
