@@ -1,4 +1,6 @@
 # import packages
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import winsound, time, io, pygame
 from gtts import gTTS
 import tkinter as Tk
